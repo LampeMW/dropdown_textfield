@@ -165,7 +165,9 @@ class _SingleSelectionState extends State<SingleSelection> {
                         top: widget.listPadding.top),
                     child: InkWell(
                         onTap: () {
-                          widget.onChanged(newDropDownList[index]);
+                          if (newDropDownList.length > index) {
+                            widget.onChanged(newDropDownList[index]);
+                          }
                         },
                         child: Row(
                           children: [
