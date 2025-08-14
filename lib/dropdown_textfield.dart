@@ -81,6 +81,7 @@ class DropDownTextField extends StatefulWidget {
       this.listTextStyle,
       this.keyboardType,
       this.autovalidateMode,
+      this.autocorrect = true,
       this.boxDecoration,
       this.boxMargin})
       : assert(
@@ -130,6 +131,7 @@ class DropDownTextField extends StatefulWidget {
     this.listTextStyle,
     this.checkBoxProperty,
     this.autovalidateMode,
+    this.autocorrect = true,
     this.boxDecoration,
     this.boxMargin,
   })  : assert(initialValue == null || controller == null,
@@ -249,6 +251,7 @@ class DropDownTextField extends StatefulWidget {
 
   final TextInputType? keyboardType;
   final AutovalidateMode? autovalidateMode;
+  final bool autocorrect;
 
   final BoxDecoration? boxDecoration;
 
@@ -565,6 +568,7 @@ class _DropDownTextFieldState extends State<DropDownTextField>
             focusNode: _textFieldFocusNode,
             keyboardType: widget.keyboardType,
             autovalidateMode: widget.autovalidateMode,
+            autocorrect: widget.autocorrect,
             style: widget.textStyle,
             enabled: widget.isEnabled,
             readOnly: widget.readOnly,
