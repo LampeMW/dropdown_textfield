@@ -74,6 +74,7 @@ class DropDownTextField extends StatefulWidget {
       this.searchDecoration,
       this.searchShowCursor,
       this.searchKeyboardType,
+      this.searchAutocorrect = true,
       this.listSpace = 0,
       this.clearOption = true,
       this.clearIconProperty,
@@ -148,6 +149,7 @@ class DropDownTextField extends StatefulWidget {
         searchTextStyle = null,
         searchAutofocus = false,
         searchKeyboardType = null,
+        searchAutocorrect = true,
         searchShowCursor = null,
         singleController = null,
         searchDecoration = null,
@@ -217,6 +219,9 @@ class DropDownTextField extends StatefulWidget {
 
   ///override default search keyboard type,only applicable if enableSearch=true,
   final TextInputType? searchKeyboardType;
+
+  ///by setting searchAutocorrect=false to disable autocorrect from search textfield,only applicable if enableSearch=true,
+  final bool searchAutocorrect;
 
   ///by setting searchAutofocus=true to autofocus search textfield,only applicable if enableSearch=true,
   ///  ///default value is false
@@ -858,6 +863,7 @@ class _DropDownTextFieldState extends State<DropDownTextField>
                       },
                       searchHeight: _searchWidgetHeight,
                       searchKeyboardType: widget.searchKeyboardType,
+                      searchAutocorrect: widget.searchAutocorrect,
                       searchAutofocus: _searchAutofocus,
                       searchDecoration: widget.searchDecoration,
                       searchShowCursor: widget.searchShowCursor,

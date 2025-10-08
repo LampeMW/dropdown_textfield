@@ -14,6 +14,7 @@ class SingleSelection extends StatefulWidget {
       required this.searchFocusNode,
       required this.mainFocusNode,
       this.searchKeyboardType,
+      required this.searchAutocorrect,
       required this.searchAutofocus,
       this.searchShowCursor,
       required this.mainController,
@@ -36,6 +37,7 @@ class SingleSelection extends StatefulWidget {
   final FocusNode searchFocusNode;
   final FocusNode mainFocusNode;
   final TextInputType? searchKeyboardType;
+  final bool searchAutocorrect;
   final bool searchAutofocus;
   final bool? searchShowCursor;
   final TextEditingController mainController;
@@ -111,6 +113,7 @@ class _SingleSelectionState extends State<SingleSelection> {
                 focusNode: widget.searchFocusNode,
                 showCursor: widget.searchShowCursor,
                 keyboardType: widget.searchKeyboardType,
+                autocorrect: widget.searchAutocorrect,
                 controller: _searchCnt,
                 onTap: () {
                   if (widget.onSearchTap != null) {
